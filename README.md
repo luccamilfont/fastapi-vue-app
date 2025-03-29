@@ -10,8 +10,7 @@ This repository contains a series of scripts to facilitate handling data from a 
 1. Download files from the folders respective to the last two years (as in 2025) from: https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/
 2. Download Relatorio_cadop.csv from: https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/
 
--
-Standardizes .csv to be ready to be consumed for the database
+- Standardizes .csv to be ready to be consumed for the database
 
 **Execution:**
 
@@ -22,16 +21,14 @@ For every .zip in the "files" folder in the same directory as this script:
 4. Replaces ',' with '.'
 
 ## data-processing-scripts/generate-import-csv-sql.py
--
-Generates a script that creates a .sql script ready to import all data. The script create tables "operadora", "transacao", and uses "transacao_staging" as a pivot, later dropped, for values that would break the script, later merged into "transacao". Created and tested with PostgreSQL, but with a little tweaking should run any relational database.
+- Generates a script that creates a .sql script ready to import all data. The script create tables "operadora", "transacao", and uses "transacao_staging" as a pivot, later dropped, for values that would break the script, later merged into "transacao". Created and tested with PostgreSQL, but with a little tweaking should run any relational database.
 
 ## application
 
 The Vue + Vite and FastAPI application
 
 ### api (FastApi)
--
-Makes requests to the database, using SQLAlchemy and Pydantic. By default, creates the necessary tables when served.
+- Makes requests to the database, using SQLAlchemy and Pydantic. By default, creates the necessary tables when served.
 
 #### Setup
 0. Create a python virtual env:
@@ -49,12 +46,10 @@ uvicorn api/main:app --reload
 ```
 
 #### Attention points
-.
-If necessary, run ```Set-ExecutionPolicy RemoteSigned -Scope CurrentUser``` in the terminal before entering the venv
+. If necessary, run ```Set-ExecutionPolicy RemoteSigned -Scope CurrentUser``` in the terminal before entering the venv
 
 ### front (Vue + Vite)
--
-Displays data fetched with axios from the API using vue-good-table-next.
+- Displays data fetched with axios from the API using vue-good-table-next.
 
 #### Setup
 
